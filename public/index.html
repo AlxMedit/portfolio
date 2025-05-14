@@ -1,74 +1,80 @@
-<head>
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</head>
-<body>
-  <div id="loader">
-    <div class="spinner"></div>
-    <div class="text">Cargando...</div>
-  </div>
-  <div id="root"></div>
+    <title>Mi Portfolio</title>
+    <style>
+      body {
+        margin: 0;
+        background-color: #000;
+      }
 
-  <style>
-    body {
-      margin: 0;
-      background-color: #000; /* Fondo negro como tu app */
-    }
+      #loader {
+        position: fixed;
+        inset: 0;
+        background: #000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease-out;
+      }
 
-    #loader {
-      position: fixed;
-      inset: 0;
-      background: #000;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      transition: opacity 0.5s ease-out;
-    }
+      #loader.fade-out {
+        opacity: 0;
+        pointer-events: none;
+      }
 
-    #loader.fade-out {
-      opacity: 0;
-      pointer-events: none;
-    }
+      .spinner {
+        border: 8px solid #333;
+        border-top: 8px solid #ffcc00;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        animation: spin 1.5s linear infinite;
+      }
 
-    .spinner {
-      border: 8px solid #333;
-      border-top: 8px solid #ffcc00;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      animation: spin 1.5s linear infinite;
-    }
+      .text {
+        margin-top: 20px;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+      }
 
-    .text {
-      margin-top: 20px;
-      color: white;
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-  </style>
-
-  <script>
-    window.addEventListener("DOMContentLoaded", () => {
-      const root = document.getElementById("root");
-      const loader = document.getElementById("loader");
-      const observer = new MutationObserver(() => {
-        if (root && root.children.length > 0 && loader) {
-          loader.classList.add("fade-out");
-          document.body.style.overflow = 'auto'; // ✅ Restaura scroll
-          setTimeout(() => loader.remove(), 500); // Elimina tras fade
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
         }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loader">
+      <div class="spinner"></div>
+      <div class="text">Cargando...</div>
+    </div>
+    <div id="root"></div>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const observer = new MutationObserver(() => {
+          const root = document.getElementById("root");
+          if (root && root.children.length > 0) {
+            const loader = document.getElementById("loader");
+            if (loader) {
+              loader.classList.add("fade-out");
+              setTimeout(() => loader.remove(), 500);
+              observer.disconnect(); // Deja de observar una vez cargado
+            }
+          }
+        });
+        observer.observe(document.getElementById("root"), { childList: true });
       });
-
-      // ✅ Bloquea scroll mientras el loader está activo
-      document.body.style.overflow = 'hidden';
-
-      observer.observe(root, { childList: true });
-    });
-  </script>
-</body>
+    </script>
+  </body>
+</html>
