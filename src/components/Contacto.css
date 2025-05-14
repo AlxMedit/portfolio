@@ -1,0 +1,156 @@
+.contacto {
+  background-color: #121212;
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contacto h2 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.contacto-form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.contacto-form label {
+  margin-bottom: 20px;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.contacto-form input,
+.contacto-form textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #444;
+  padding: 8px 4px;
+  color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+.contacto-form input:focus,
+.contacto-form textarea:focus {
+  outline: none;
+  border-bottom-color: #ffcc00;
+}
+
+.contacto-form button {
+  width: 100%; /* Ocupa todo el ancho disponible */
+  padding: 10px 0; /* Padding vertical moderado para el botón */
+  background-color: transparent; /* Fondo transparente */
+  color: white; /* Texto amarillo */
+border-right: 1px solid #ffcc00;
+border-bottom: 1px solid #ffcc00;
+  border-radius: 5px;
+  font-size: 1rem; /* Tamaño de fuente cómodo */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.contacto-form button:hover {
+  background-color: #ffcc00; /* Fondo amarillo en hover */
+  color: #121212; /* Cambio a texto oscuro */
+}
+
+.contacto-form button:focus {
+  outline: none;
+  border-color: #ffcc00; /* Borde amarillo en focus */
+}
+
+.contacto-form button:active {
+  background-color: #e6b800; /* Fondo amarillo más oscuro cuando se hace clic */
+}
+
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #1e1e1e;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 400px;
+  text-align: center;
+}
+
+.modal h3 {
+  margin-bottom: 15px;
+  color: #ffcc00;
+}
+
+.modal p {
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.modal a {
+  color: #0a66c2;
+  text-decoration: underline;
+}
+
+.modal button {
+  padding: 10px 20px;
+  background: #0a66c2;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal button:hover {
+  background: #084a8a;
+}
+
+#contacto {
+  margin-bottom: 185px;
+}
+
+/* Estilo más limpio para el reCAPTCHA */
+.contacto-form .g-recaptcha {
+  transform: scale(0.85); /* Reduce su tamaño */
+  transform-origin: center;
+  margin: 10px auto;
+  filter: grayscale(1) brightness(1.2); /* Le quita saturación para que encaje con el diseño oscuro */
+  transition: filter 0.3s ease;
+}
+
+.contacto-form .g-recaptcha:hover {
+  filter: grayscale(0.5) brightness(1);
+}
+
+
+.captcha-wrapper {
+  margin: 10px 0 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.captcha-label {
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  color: #ccc;
+}

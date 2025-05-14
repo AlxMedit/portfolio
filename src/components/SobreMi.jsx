@@ -1,0 +1,67 @@
+import React, { useState } from "react";
+import "./SobreMi.css";
+
+export default function SobreMi() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Array de imágenes para el slider
+  const images = [
+    "alex.jpg", // Ruta de la imagen 1
+    "path/to/image2.jpg", // Ruta de la imagen 2
+    "path/to/image3.jpg", // Ruta de la imagen 3
+    // Añadir más imágenes según sea necesario
+  ];
+
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex(
+      (prevIndex) => (prevIndex - 1 + images.length) % images.length
+    );
+  };
+
+  return (
+    <section className="sobre-mi" id="about">
+      <div className="sobre-mi-contenido">
+        <h2>Sobre mí</h2>
+        <div className="sobre-mi-grid">
+          {/* Primer columna para el texto */}
+          <div className="sobre-mi-texto">
+            <p>
+              ¡Hola! Soy Alex, un apasionado de la informática y la programación. 
+              Desde pequeño, influenciado por mi familia, siempre he tenido una conexión 
+              con el sector, lo que me llevó a estudiar y graduarme en ASIR y DAW.
+            </p>
+            <p>
+              Actualmente, soy un desarrollador web junior y administrador de sistemas, 
+              con un enfoque e interés especial en el análisis de datos, la seguridad informática y 
+              el aseguramiento de la calidad (QA testing). Estoy comprometido con la mejora 
+              continua y siempre estoy buscando nuevas herramientas y tecnologías para seguir 
+              creciendo.
+            </p>
+            <p>
+              La programación es más que un trabajo para mí, es una pasión. ¡Siempre listo 
+              para aprender y enfrentar nuevos retos!
+            </p>
+            <h3>Mis Hobbies</h3>
+            <p>
+              Además de la programación, disfruto de los juegos de mesa y tengo una gran 
+              afición por Pokémon. Por ello decidí unir dos cosas que me gustan mucho y me
+              definen y referenciarlos en mi portfolio, por ello para la estructura de los
+              proyectos decidí simular cada proyecto como si fuera una carta de Pokemon TCG
+            </p>
+          </div>
+
+          {/* Cuarta columna para el slider de imágenes */}
+          <div className="sobre-mi-slider">
+            <button className="slider-btn prev" onClick={prevImage}>{"❮"}</button>
+            <img src={images[currentImageIndex]} alt="Fotos" />
+            <button className="slider-btn next" onClick={nextImage}>{"❯"}</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -36,3 +36,46 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+/* App.css */
+.suspense-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000; /* Fondo negro */
+  z-index: 9999;
+  flex-direction: column; /* Para que el texto y el spinner se apilen verticalmente */
+}
+
+.spinner {
+  border: 8px solid #f3f3f3; /* Color gris claro para el fondo */
+  border-top: 8px solid #ffcc00; /* Color #ffcc00 para la parte superior del spinner */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1.5s linear infinite;
+}
+
+.suspense-text {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #fff; /* Color blanco para el texto */
+  font-weight: bold;
+}
+
+/* Animación de rotación */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,258 @@
+/* canvas fullScreen ya queda cubriendo todo vía fullScreen:true en el JS */
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/* Contenedor de contenido HERO */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 0 20px;
+  text-align: center;
+  color: #fff;
+  backdrop-filter: brightness(1.1);
+  box-sizing: border-box;
+}
+
+@media(max-width: 768px){
+  .hero-content {
+    height: 100dvh;
+  }
+}
+
+/* Imagen de perfil */
+.hero-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Texto y botones */
+.hero-texto h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-botones {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+
+.hero-botones button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  background-color: #1e88e5;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero-botones button:hover {
+  background-color: #1565c0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+  }
+
+  .hero-img {
+    margin: 0 0 20px;
+    width: 140px;
+    height: 140px;
+  }
+
+  .hero-texto h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-botones {
+    flex-direction: column;
+  }
+
+  .hero-botones button {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .hero-botones {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+
+
+.foto-con-luz {
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+/* Foto redonda */
+.hero-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 1;
+  position: relative;
+}
+
+/* Círculo animado */
+.luz-animada {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.1)
+  );
+  animation: girarLuz 3s linear infinite;
+  z-index: 0;
+  filter: blur(4px);
+}
+
+@keyframes girarLuz {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.scroll-down-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: fadeIn 2s ease-in;
+}
+
+.animated-arrow {
+  animation: bounce 2s infinite, brilloFlecha 1.5s ease-in-out infinite;
+  opacity: 0.8;
+  position: relative;
+  z-index: 1;
+}
+
+.animated-arrow:hover {
+  opacity: 1;
+}
+
+/* Rebote suave */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+/* Aparición */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+
+.scroll-down-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.flecha-con-luz {
+  position: relative;
+  display: inline-block;
+}
+
+/* Flecha con rebote */
+.animated-arrow {
+  animation: bounce 2s infinite;
+  opacity: 0.8;
+  position: relative;
+  z-index: 1;
+}
+
+/* Luz animada detrás de la flecha */
+.luz-scroll {
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.1)
+  );
+  animation: brilloFlecha 3s linear infinite;
+  filter: blur(6px);
+  z-index: 0;
+}
+
+/* Rebote */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+/* Animación para el brillo */
+@keyframes brilloFlecha {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 40px rgba(255, 255, 255, 0.6);
+  }
+}
+
+
+/* Giro de luz */
+@keyframes girarLuz {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
