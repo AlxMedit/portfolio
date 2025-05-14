@@ -6,7 +6,7 @@ import {
 import {
   SiTailwindcss, SiJquery, SiAstro, SiSymfony, SiMysql, SiApollographql
 } from 'react-icons/si';
-import './StackTecnologico.css';
+import './global.css';
 
 export default function StackTecnologico() {
   const [expanded, setExpanded] = useState(null);

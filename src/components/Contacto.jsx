@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import ReCAPTCHA from 'react-google-recaptcha';
-import './Contacto.css';
+import './global.css';
 
 export default function Contacto() {
   const recaptchaRef = useRef();
@@ -136,7 +136,7 @@ export default function Contacto() {
                 <p>
                   Gracias por escribirme. También puedes contactarme en{' '}
                   <a
-                    href="https://www.linkedin.com/in/tu-perfil"
+                    href="https://www.linkedin.com/in/alejandro-vaq-abad/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

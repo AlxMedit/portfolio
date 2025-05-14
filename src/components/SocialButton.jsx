@@ -1,6 +1,6 @@
 // src/components/SocialButton.jsx
 import React from "react";
-import "./SocialButton.css";
+import './global.css';
 
 export default function SocialButton({ color, hoverColor, Icon, text, url }) {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import "./Formacion.css";
+import './global.css';
 
 const Formacion = () => {
   const academica = [

@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from './Card';
-import './Proyectos.css'
+import './global.css';
 
 export default function Proyectos() {
   const proyectos = [
@@ -9,7 +9,7 @@ export default function Proyectos() {
       description: 'Proyecto desarrollado en React con la finalidad de poder generar contraseñas completamente aleatorias sin cumplimiento de patrón',
       stacks: ['React'],
       demoLink: 'https://randompasswordgenerator-o94b2uo7c-alxmedits-projects.vercel.app/',
-      image: '/imagenes/generador.png', 
+      image: 'https://res.cloudinary.com/dosy11yxg/image/upload/v1747221717/generador_ynorck.png', 
       repoLink: 'https://github.com/AlxMedit/passwordGenerator',
     },
     {
@@ -17,7 +17,7 @@ export default function Proyectos() {
       description: 'Proyecto desarrollado en React, se encarga del consumo de una API realizada en PHP nativo, para la gestión de reservas de actividades e instalaciones de centros cívicos',
       stacks: ['React'],
       demoLink: 'https://youtu.be/U_Uaczgkkh0',
-      image: '/imagenes/frontcc.png',
+      image: 'https://res.cloudinary.com/dosy11yxg/image/upload/v1747221718/frontcc_pf2qua.png',
       repoLink: 'https://github.com/AlxMedit/Cliente-API-React',
     },
     {
@@ -25,7 +25,7 @@ export default function Proyectos() {
       description: 'API desarrollada en PHP nativo con uso de la librería phpdotenv para mejorar la seguridad de los datos y firebase para la gestión de usuarios, para poder tener control de que solo usuarios con sesión iniciada puedan realizar las reservas',
       stacks: ['PHP'],
       demoLink: 'https://youtu.be/U_Uaczgkkh0',
-      image: '/imagenes/backcc.png',
+      image: 'https://res.cloudinary.com/dosy11yxg/image/upload/v1747221718/backcc_zmnwe3.png',
       repoLink: 'https://github.com/AlxMedit/Desarrollo-API-PHP',
     },
     {
@@ -33,7 +33,7 @@ export default function Proyectos() {
         description: 'Aplicación desarrollada en modelo vista-controlador con PHP para la gestión de un portal de portfolios, pudiendo crear el tuyo, modificarlo o ver el del resto, cuenta con librerias como firebase y mailer, para poder enviar correos de verificación de usuario a la hora de registrarse',
         stacks: ['PHP'],
         demoLink: 'https://youtu.be/qDJ74iVyICs',
-        image: '/imagenes/portfolios.png',
+        image: 'https://res.cloudinary.com/dosy11yxg/image/upload/v1747221719/portfolios_vcaily.png',
         repoLink: 'https://github.com/AlxMedit/PHP/tree/main/Aplicaci%C3%B3n%20de%20gesti%C3%B3n%20de%20portfolios'    
     },
     {
@@ -41,7 +41,7 @@ export default function Proyectos() {
         description: 'Proyecto integrado del CFGS DAW, el proyecto consiste en el consumo de la api de ADSB.LOL y tratado de datos, pudiendo acceder a datos de cada continente y España, tratando los datos en vivo y manteniendo un flujo continuo de los datos, también cuenta con un mapa para el muestreo de los aviones en vivo.',
         stacks: ['React', 'Tailwind', 'Astro'],
         demoLink: 'https://api-vuelos-eight.vercel.app/',
-        image: '/imagenes/aviones.png',
+        image: 'https://res.cloudinary.com/dosy11yxg/image/upload/v1747221651/aviones_vcsji1.png',
         repoLink: '#'    
     }
   ];

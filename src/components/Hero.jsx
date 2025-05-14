@@ -3,7 +3,7 @@ import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import SocialButton from "./SocialButton";
 import { FaLinkedin, FaGithub, FaDownload } from "react-icons/fa";
-import "./Hero.css";
+import './Hero.css';
 
 export default function Hero() {
   // Inicializamos tsParticles con el bundle completo v2.x
@@ -62,7 +62,7 @@ export default function Hero() {
       <div className="hero-content" id="inicio">
         <div className="foto-con-luz">
           <img
-            src="/alex.jpg"
+            src="https://res.cloudinary.com/dosy11yxg/image/upload/v1747221624/alex_ines0q.jpg"
             alt="Foto de Alex Abad"
             className="hero-img"
           />

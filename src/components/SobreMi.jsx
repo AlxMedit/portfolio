@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./SobreMi.css";
+import './global.css';
 
 export default function SobreMi() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);

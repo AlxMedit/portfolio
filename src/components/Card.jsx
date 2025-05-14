@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaReact, FaNode, FaPhp, FaGithub, FaPlay } from 'react-icons/fa'; // Agrega FaPlay
 import { SiAstro, SiTailwindcss } from 'react-icons/si';
-import './Card.css';
+import './global.css';
 
 export default function Card({ title, description, stacks, demoLink, repoLink, image }) {
     return (
