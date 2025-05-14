@@ -1,34 +1,74 @@
-<!DOCTYPE html>
-<html lang="es">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio - Alex Abad</title>
-
-  <!-- Importación del archivo CSS global -->
-  <link rel="stylesheet" href="styles.css" />
-
-  <!-- Aquí puedes agregar otras metas o enlaces como iconos de aplicación -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
-
-<body style="background-color: #f0f0f0;">
-  <!-- Splash Screen que se muestra antes de que React termine de cargar -->
-  <div id="splash-screen" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; display: flex; justify-content: center; align-items: center; background-color: #ffffff; z-index: 9999;">
-    <div class="spinner">Cargando...</div>
+<body>
+  <div id="loader">
+    <div class="spinner"></div>
+    <div class="text">Cargando...</div>
   </div>
-
-  <!-- Este es el contenedor principal donde React se montará -->
   <div id="root"></div>
 
+  <style>
+    body {
+      margin: 0;
+      background-color: #000; /* Fondo negro como tu app */
+    }
+
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease-out;
+    }
+
+    #loader.fade-out {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .spinner {
+      border: 8px solid #333;
+      border-top: 8px solid #ffcc00;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1.5s linear infinite;
+    }
+
+    .text {
+      margin-top: 20px;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+
   <script>
-    // Script para eliminar el splash screen cuando la página haya cargado completamente
-    window.addEventListener("load", function () {
-      document.getElementById("splash-screen").style.display = "none";
+    window.addEventListener("DOMContentLoaded", () => {
+      const root = document.getElementById("root");
+      const loader = document.getElementById("loader");
+      const observer = new MutationObserver(() => {
+        if (root && root.children.length > 0 && loader) {
+          loader.classList.add("fade-out");
+          document.body.style.overflow = 'auto'; // ✅ Restaura scroll
+          setTimeout(() => loader.remove(), 500); // Elimina tras fade
+        }
+      });
+
+      // ✅ Bloquea scroll mientras el loader está activo
+      document.body.style.overflow = 'hidden';
+
+      observer.observe(root, { childList: true });
     });
   </script>
-
-  <!-- Asegúrate de que tu script de React se cargue correctamente -->
 </body>
-
-</html>
