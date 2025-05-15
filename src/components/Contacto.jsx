@@ -25,13 +25,10 @@ export default function Contacto() {
     };
   }, []);
 
-
-  // Maneja cambios en inputs
   const handleChange = (e) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  // Guarda el token de reCAPTCHA
   const handleCaptcha = (token) => {
     setCaptchaToken(token);
   };
@@ -44,7 +41,6 @@ export default function Contacto() {
       return;
     }
 
-    // Construye el objeto con todos los campos que pide tu template
     const templateParams = {
       title: 'Contact Us',
       time: currentTime,
@@ -55,10 +51,10 @@ export default function Contacto() {
     };
 
     emailjs.send(
-      'service_pv5ovti',      // tu Service ID
-      'template_h1s4ufh',     // tu Template ID
+      'service_pv5ovti',
+      'template_h1s4ufh',
       templateParams,
-      'ffz7UMtE2GI69BvsQ'     // tu Public Key
+      'ffz7UMtE2GI69BvsQ'
     ).then(
       () => {
         setModal({ open: true, success: true });
@@ -66,10 +62,9 @@ export default function Contacto() {
       },
       (error) => {
         console.error('ERROR al enviar:', error.text);
-        setModal({ open: true, success: false, message: 'Ups, un error inesperado. Contáctame por LinkedIn.' });
+        setModal({ open: true, success: false, message: 'Ups, un error inesperado.' });
       }
     ).finally(() => {
-      // Resetea CAPTCHA para un nuevo token
       recaptchaRef.current.reset();
       setCaptchaToken('');
     });
@@ -122,8 +117,6 @@ export default function Contacto() {
           />
         </div>
 
-
-
         <button type="submit">Enviar</button>
       </form>
 
@@ -147,7 +140,16 @@ export default function Contacto() {
             ) : (
               <>
                 <h3>Atención</h3>
-                <p>{modal.message}</p>
+                <p>
+                  {modal.message} También puedes contactarme en{' '}
+                  <a
+                    href="https://www.linkedin.com/in/alejandro-vaq-abad/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    LinkedIn
+                  </a>.
+                </p>
               </>
             )}
             <button onClick={() => setModal({ ...modal, open: false })}>
