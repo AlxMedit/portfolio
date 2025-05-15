@@ -87,7 +87,7 @@ export default function Hero() {
               hoverColor="#790f96"
               Icon={FaDownload}
               text="Descargar CV"
-              url="/cv.pdf"
+              url="https://cdn.jsdelivr.net/gh/AlxMedit/portfolio@master/public/cv.pdf"
             />
           </div>
         </div>
