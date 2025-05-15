@@ -60,15 +60,11 @@ export default function Hero() {
 
       {/* Contenido del Hero */}
       <div className="hero-content" id="inicio">
+        
         <div className="foto-con-luz">
-          <img
-            src="https://res.cloudinary.com/dosy11yxg/image/upload/v1747221624/alex_ines0q.jpg"
-            alt="Foto de Alex Abad"
-            className="hero-img"
-          />
-          <div className="luz-animada"></div>
+          <span className="luz-animada" />
+          <img src="https://res.cloudinary.com/dosy11yxg/image/upload/v1747221624/alex_ines0q.jpg" alt="Foto de Perfil" className="hero-img" />
         </div>
-
         <div className="hero-texto">
           <h1>Alejandro Abad</h1>
           <div className="hero-botones">
