@@ -45,7 +45,6 @@ export default function Proyectos() {
         repoLink: '#'    
     }
   ];
-
   return (
     <section className="proyectos" id="proyectos">
       <h2>Proyectos</h2>

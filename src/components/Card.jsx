@@ -19,8 +19,9 @@ export default function Card({ title, description, stacks, demoLink, repoLink, i
 
             <div className="card-body">
                 <div className="card-image">
-                    <img src={image} alt={title} />
-                </div>
+                    <a href={demoLink} target="_blank" rel="noopener noreferrer">
+                        <img src={image} alt={title} />
+                    </a>                </div>
 
                 <div className="card-description">
                     <h3>Descripción</h3>
