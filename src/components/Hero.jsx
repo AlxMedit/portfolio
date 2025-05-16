@@ -62,7 +62,6 @@ export default function Hero() {
       <div className="hero-content" id="inicio">
         
         <div className="foto-con-luz">
-          <span className="luz-animada" />
           <img src="https://res.cloudinary.com/dosy11yxg/image/upload/v1747221624/alex_ines0q.jpg" alt="Foto de Perfil" className="hero-img" />
         </div>
         <div className="hero-texto">
