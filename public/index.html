@@ -1,80 +1,85 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alex Abad - Portfolio</title>
-    <style>
-      body {
-        margin: 0;
-        background-color: #000;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex Abad - Portfolio</title>
+  <favicon href="./favicon.png" />
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+    }
+
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease-out;
+    }
+
+    #loader.fade-out {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .spinner {
+      border: 8px solid #333;
+      border-top: 8px solid #ffcc00;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1.5s linear infinite;
+    }
+
+    .text {
+      margin-top: 20px;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
       }
 
-      #loader {
-        position: fixed;
-        inset: 0;
-        background: #000;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-        transition: opacity 0.5s ease-out;
+      100% {
+        transform: rotate(360deg);
       }
+    }
+  </style>
+</head>
 
-      #loader.fade-out {
-        opacity: 0;
-        pointer-events: none;
-      }
+<body>
+  <div id="loader">
+    <div class="spinner"></div>
+    <div class="text">Cargando...</div>
+  </div>
+  <div id="root"></div>
 
-      .spinner {
-        border: 8px solid #333;
-        border-top: 8px solid #ffcc00;
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        animation: spin 1.5s linear infinite;
-      }
-
-      .text {
-        margin-top: 20px;
-        color: white;
-        font-size: 18px;
-        font-weight: bold;
-      }
-
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="loader">
-      <div class="spinner"></div>
-      <div class="text">Cargando...</div>
-    </div>
-    <div id="root"></div>
-
-    <script>
-      window.addEventListener("DOMContentLoaded", () => {
-        const observer = new MutationObserver(() => {
-          const root = document.getElementById("root");
-          if (root && root.children.length > 0) {
-            const loader = document.getElementById("loader");
-            if (loader) {
-              loader.classList.add("fade-out");
-              setTimeout(() => loader.remove(), 500);
-              observer.disconnect(); // Deja de observar una vez cargado
-            }
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const observer = new MutationObserver(() => {
+        const root = document.getElementById("root");
+        if (root && root.children.length > 0) {
+          const loader = document.getElementById("loader");
+          if (loader) {
+            loader.classList.add("fade-out");
+            setTimeout(() => loader.remove(), 500);
+            observer.disconnect(); // Deja de observar una vez cargado
           }
-        });
-        observer.observe(document.getElementById("root"), { childList: true });
+        }
       });
-    </script>
-  </body>
+      observer.observe(document.getElementById("root"), { childList: true });
+    });
+  </script>
+</body>
+
 </html>
