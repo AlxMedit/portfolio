@@ -40,7 +40,7 @@ export default function Proyectos() {
         title: 'Proyecto Integrado',
         description: 'Aplicación desarrollada como proyecto final del CFGS en Desarrollo de Aplicaciones Web. Se encarga del consumo en tiempo real de la API de ADSB.LOL, ofreciendo visualización y análisis de datos aéreos por continente y específicamente en España. Incluye un mapa interactivo que muestra la posición actual de aviones en vivo, manteniendo un flujo constante de información.',
         stacks: ['React', 'Tailwind', 'Astro'],
-        demoLink: 'https://api-vuelos-eight.vercel.app/',
+        demoLink: 'https://apivuelos.es/',
         image: 'https://res.cloudinary.com/dosy11yxg/image/upload/v1747221651/aviones_vcsji1.png',
         repoLink: '#'    
     }

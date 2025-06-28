@@ -6,10 +6,9 @@ export default function SobreMi() {
 
   // Array de imágenes para el slider
   const images = [
-    "alex.jpg", // Ruta de la imagen 1
-    "path/to/image2.jpg", // Ruta de la imagen 2
-    "path/to/image3.jpg", // Ruta de la imagen 3
-    // Añadir más imágenes según sea necesario
+    "https://res.cloudinary.com/dosy11yxg/image/upload/v1751107744/loquehago2_h5qmh9_r6nkyy.jpg", // Ruta de la imagen 1
+    "https://res.cloudinary.com/dosy11yxg/image/upload/v1751107711/loquehago1_xtzppl_nkczmt.jpg", // Ruta de la imagen 2
+    "https://res.cloudinary.com/dosy11yxg/image/upload/v1751107671/loquehago3_ju7gt0_c_fill_w_720_h_720_sszf1j.jpg", // Ruta de la imagen 3
   ];
 
   const nextImage = () => {
