@@ -86,7 +86,7 @@ export default function Hero() {
               hoverColor="#790f96"
               Icon={FaDownload}
               text="Descargar CV"
-              url="./cv"
+              url="/cv.pdf"
             />
           </div>
         </div>
