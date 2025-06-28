@@ -35,7 +35,7 @@ export default function SobreMi() {
               con el sector, lo que me llevó a estudiar y graduarme en ASIR y DAW.
             </p>
             <p>
-              Actualmente, soy un desarrollador web junior y administrador de sistemas, 
+              Actualmente, soy desarrollador web junior y administrador de sistemas, 
               con un enfoque e interés especial en el análisis de datos, la seguridad informática y 
               el aseguramiento de la calidad (QA testing). Estoy comprometido con la mejora 
               continua y siempre estoy buscando nuevas herramientas y tecnologías para seguir 
